@@ -4,8 +4,11 @@ Django==4.1.7
 django-cors-headers==3.14.0
 django-environ==0.10.0
 djangorestframework==3.14.0
+mysql-connector-python==8.0.33
 mysqlclient==2.1.1
 Pillow==9.4.0
+protobuf==3.20.3
+python-decouple==3.8
 python-dotenv==1.0.0
 pytz==2023.3
 sqlparse==0.4.3
