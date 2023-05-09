@@ -1,0 +1,834 @@
+{
+	"info": {
+		"_postman_id": "a6eec7b1-b86d-46bc-9232-6b1514150d7f",
+		"name": "banner_apis_updated",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26389462"
+	},
+	"item": [
+		{
+			"name": "User Register,Login and logout",
+			"item": [
+				{
+					"name": "login_api",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout_api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"abhiji08tsonar\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/logout/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"abhijitsonar\",\n    \"email\": \"abhijitsonar517@gmail.com\",\n    \"password\": \"abhijit@123\",\n    \"password2\":\"abhijit@123\",\n    \"phone_number\":997922458,\n    \"is_admin\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/register/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate_otp",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "get_all_user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/getalluser/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getalluser",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrive_user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/getuser/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getuser",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token c33fa2691fdd06443893e0bf49d40276f038c804",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"keshav s\",\n    \"email\": \"keshv@example.com\",\n    \"phone_number\": 8848555555,\n    \"is_admin\": true,\n    \"password\": \"keshv@123\",\n    \"password2\":\"keshv@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/updateuser/11/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateuser",
+								"11",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/deleteuser/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deleteuser",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-change-password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 938edb9d4dc9fd8ee277226393a5c7c8b39c350d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\": \"abhi@123\",\n    \"new_password\": \"abhijit@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/change-password/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"change-password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend-otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/resend-otp/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"resend-otp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_user_profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user-profile/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_user_profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilei_image",
+									"type": "file",
+									"src": "/home/prashant/Pictures/images.jpeg"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "admin@ banner api",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user-profile/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-profile",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"admin_banners\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/category/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/category/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 847f44a0917e1df18eeb666f69facc3a7dc5be86",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/category/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/category/3/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "banner",
+			"item": [
+				{
+					"name": "Add_banneras",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "banner_img",
+									"type": "file",
+									"src": "/home/prashant/Downloads/Qlan/Admin_service/qlan-admin-flask/apps/static/assets/images/bg-images/thumb_bg4.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/add_banners/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add_banners",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all banners",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/get_all_banners/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"get_all_banners",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update banner",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "banner_img",
+									"type": "file",
+									"src": "/home/prashant/Downloads/Qlan/Admin_service/qlan-admin-flask/apps/static/assets/images/bg-images/bg3.jpg"
+								},
+								{
+									"key": "category",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update_banner/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update_banner",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete banner",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete_banner/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete_banner",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_banner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/get_banner/3/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"get_banner",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category_banners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/category_banners/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category_banners",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin_banners",
+			"item": [
+				{
+					"name": "get_banners",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/admin_banners/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin_banners",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_admin_banners",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "banner_images",
+									"type": "file",
+									"src": "/home/prashant/Downloads/Qlan/Admin_service/qlan-admin-flask/apps/static/assets/images/bg-images/thumb_bg1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin_banners/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin_banners",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrive_admin_banners",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/admin_banners/4/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin_banners",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_admin_banners",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "banner_images",
+									"type": "file",
+									"src": "/home/prashant/Downloads/Qlan/Admin_service/qlan-admin-flask/apps/static/assets/images/bg-images/thumb_bg5.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin_banners/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin_banners",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_admin_banners",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/admin_banners/4/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin_banners",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
