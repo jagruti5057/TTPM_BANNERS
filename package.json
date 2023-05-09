@@ -1,1 +1,9 @@
-{}
+{
+    "scripts": {
+      "build": "bash build.sh",
+      "dev": "python3.10.6 manage.py runserver 0.0.0.0:$PORT",
+      "start": "gunicorn banner_apis.wsgi:application --bind 0.0.0.0:$PORT --log-file -",
+      "test": "python3.10.6 manage.py test"
+    }
+  }
+  
