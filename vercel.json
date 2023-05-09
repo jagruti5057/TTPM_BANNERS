@@ -3,7 +3,7 @@
     "builds": [
         {
             "src": "banner_apis/wsgi.py",
-            "use": "@vercel/python ",
+            "use": "@vercel/python-builder ",
             "config":{
                 "maxLambdaSize":"15mb",
                 "runtime":"python3.10.6"
